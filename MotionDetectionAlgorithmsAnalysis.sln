@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2003
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotionDetectionAlgorithmsAnalysis", "MotionDetectionAlgorithmsAnalysis\MotionDetectionAlgorithmsAnalysis.csproj", "{62ADDA25-87FD-4C5E-B0D1-A0F348F30BBF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{62ADDA25-87FD-4C5E-B0D1-A0F348F30BBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62ADDA25-87FD-4C5E-B0D1-A0F348F30BBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62ADDA25-87FD-4C5E-B0D1-A0F348F30BBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62ADDA25-87FD-4C5E-B0D1-A0F348F30BBF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {08046D58-FE8A-4251-A19B-A997B39D7F6E}
+	EndGlobalSection
+EndGlobal
