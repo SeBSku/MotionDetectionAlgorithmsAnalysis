@@ -133,6 +133,8 @@ namespace MotionDetectionAlgorithmsAnalysis
             this.motionsDetectedLabel = new System.Windows.Forms.Label();
             this.motionsDetectedTxBx = new System.Windows.Forms.TextBox();
             this.stopButton = new System.Windows.Forms.Button();
+            this.singleFrameDetectedTxBx = new System.Windows.Forms.TextBox();
+            this.singleFrameDetectedLabel = new System.Windows.Forms.Label();
             this.bgSubtractorTypePanel.SuspendLayout();
             this.mogPanel.SuspendLayout();
             this.mog2Panel.SuspendLayout();
@@ -1133,11 +1135,30 @@ namespace MotionDetectionAlgorithmsAnalysis
             this.stopButton.UseVisualStyleBackColor = true;
             this.stopButton.Click += new System.EventHandler(this.stopButton_Click);
             // 
+            // singleFrameDetectedTxBx
+            // 
+            this.singleFrameDetectedTxBx.Location = new System.Drawing.Point(702, 377);
+            this.singleFrameDetectedTxBx.Name = "singleFrameDetectedTxBx";
+            this.singleFrameDetectedTxBx.ReadOnly = true;
+            this.singleFrameDetectedTxBx.Size = new System.Drawing.Size(100, 20);
+            this.singleFrameDetectedTxBx.TabIndex = 21;
+            // 
+            // singleFrameDetectedLabel
+            // 
+            this.singleFrameDetectedLabel.AutoSize = true;
+            this.singleFrameDetectedLabel.Location = new System.Drawing.Point(583, 380);
+            this.singleFrameDetectedLabel.Name = "singleFrameDetectedLabel";
+            this.singleFrameDetectedLabel.Size = new System.Drawing.Size(113, 13);
+            this.singleFrameDetectedLabel.TabIndex = 20;
+            this.singleFrameDetectedLabel.Text = "Single frame detected:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(890, 533);
+            this.Controls.Add(this.singleFrameDetectedTxBx);
+            this.Controls.Add(this.singleFrameDetectedLabel);
             this.Controls.Add(this.stopButton);
             this.Controls.Add(this.motionsDetectedTxBx);
             this.Controls.Add(this.motionsDetectedLabel);
@@ -1279,6 +1300,8 @@ namespace MotionDetectionAlgorithmsAnalysis
         private System.Windows.Forms.Label motionsDetectedLabel;
         private System.Windows.Forms.TextBox motionsDetectedTxBx;
         private System.Windows.Forms.Button stopButton;
+        private System.Windows.Forms.TextBox singleFrameDetectedTxBx;
+        private System.Windows.Forms.Label singleFrameDetectedLabel;
     }
 }
 

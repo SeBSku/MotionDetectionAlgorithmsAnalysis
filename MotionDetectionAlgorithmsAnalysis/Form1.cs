@@ -104,6 +104,7 @@ namespace MotionDetectionAlgorithmsAnalysis
 
         private void MotionDetection(VideoCapture videoCapture)
         {
+            motionsDetected = 0;
             int timeBetweenFrames;
             if (isCameraLiveVideo)
             {
@@ -114,6 +115,8 @@ namespace MotionDetectionAlgorithmsAnalysis
                 timeBetweenFrames = (int)(1 / videoCapture.GetCaptureProperty(CapProp.Fps) * 1000);
             }
             var frame = new Mat();
+            long frameCounter = 0;
+            long singleFrameCounter = 0;
             bool isFirst = true;
 
             while (!isStopped)
@@ -131,12 +134,12 @@ namespace MotionDetectionAlgorithmsAnalysis
                     }
                     else
                     {
+                        frameCounter++;
                         if (isFirst)
                         {
                             isFirst = false;
                         }
                     }
-
 
                     var fg = new Mat();
                     backgroundSubtractor.Apply(frame, fg);
@@ -148,15 +151,23 @@ namespace MotionDetectionAlgorithmsAnalysis
                     var hierarchy = new Image<Bgr, Byte>(diff.Size.Width, diff.Size.Height);
                     CvInvoke.FindContours(grayImage, contours, hierarchy, RetrType.Ccomp, ChainApproxMethod.ChainApproxSimple);
 
+                    if (frameCounter == 71)
+                    {
+                        singleFrameCounter = (long)motionsDetected;
+                    }
                     for (int i = 0; i < contours.Size; i++)
                     {
                         if (CvInvoke.ContourArea(contours[i]) > minMotionArea)
                         {
                             Rectangle rect = CvInvoke.BoundingRectangle(contours[i]);
-                            if (!isCameraLiveVideo)
+                            if (!isCameraLiveVideo && frameCounter > 70 && frameCounter < 90)
                                 motionsDetected++;
                             CvInvoke.Rectangle(frame, rect, new MCvScalar(0, 0, 255), 1);
                         }
+                    }
+                    if (frameCounter == 71)
+                    {
+                        singleFrameCounter = (long)motionsDetected - singleFrameCounter;
                     }
                     CvInvoke.Imshow("SourceWithDetectedMotion", frame);
                     CvInvoke.Imshow("DetectedMotion", fg);
@@ -168,6 +179,7 @@ namespace MotionDetectionAlgorithmsAnalysis
                     break;
                 }
             }
+            singleFrameDetectedTxBx.Text = singleFrameCounter.ToString();
             motionsDetectedTxBx.Text = motionsDetected.ToString();
             CvInvoke.DestroyAllWindows();
         }
