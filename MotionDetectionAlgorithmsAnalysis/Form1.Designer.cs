@@ -133,6 +133,7 @@ namespace MotionDetectionAlgorithmsAnalysis
             this.motionsDetectedLabel = new System.Windows.Forms.Label();
             this.motionsDetectedTxBx = new System.Windows.Forms.TextBox();
             this.stopButton = new System.Windows.Forms.Button();
+            this.meanshiftButton = new System.Windows.Forms.Button();
             this.bgSubtractorTypePanel.SuspendLayout();
             this.mogPanel.SuspendLayout();
             this.mog2Panel.SuspendLayout();
@@ -1133,12 +1134,23 @@ namespace MotionDetectionAlgorithmsAnalysis
             this.stopButton.UseVisualStyleBackColor = true;
             this.stopButton.Click += new System.EventHandler(this.stopButton_Click);
             // 
+            // meanshiftButton
+            // 
+            this.meanshiftButton.Location = new System.Drawing.Point(699, 398);
+            this.meanshiftButton.Name = "meanshiftButton";
+            this.meanshiftButton.Size = new System.Drawing.Size(75, 23);
+            this.meanshiftButton.TabIndex = 19;
+            this.meanshiftButton.Text = "Meanshift";
+            this.meanshiftButton.UseVisualStyleBackColor = true;
+            this.meanshiftButton.Click += new System.EventHandler(this.meanshiftButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(890, 533);
             this.Controls.Add(this.stopButton);
+            this.Controls.Add(this.meanshiftButton);
             this.Controls.Add(this.motionsDetectedTxBx);
             this.Controls.Add(this.motionsDetectedLabel);
             this.Controls.Add(this.minAreaTxBx);
@@ -1279,6 +1291,7 @@ namespace MotionDetectionAlgorithmsAnalysis
         private System.Windows.Forms.Label motionsDetectedLabel;
         private System.Windows.Forms.TextBox motionsDetectedTxBx;
         private System.Windows.Forms.Button stopButton;
+        private System.Windows.Forms.Button meanshiftButton;
     }
 }
 

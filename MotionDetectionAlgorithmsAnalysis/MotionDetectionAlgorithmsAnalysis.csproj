@@ -63,10 +63,20 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Meanshift.cs" />
+    <Compile Include="MeanshiftForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MeanshiftForm.Designer.cs">
+      <DependentUpon>MeanshiftForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MeanshiftForm.resx">
+      <DependentUpon>MeanshiftForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

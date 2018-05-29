@@ -823,5 +823,27 @@ namespace MotionDetectionAlgorithmsAnalysis
                     break;
             }
         }
+
+        private void meanshiftButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                isStopped = false;
+                VideoCapture videoCapture = CreateVideoCapture();
+                if (videoCapture != null)
+                {
+                    var meanshiftForm = new MeanshiftForm(videoCapture);
+                    meanshiftForm.Show();
+                }
+                else
+                {
+                    ShowError("Error", "Cannot acquire video!");
+                }
+            }
+            catch (Exception ex)
+            {
+                ShowError("Error", ex.Message);
+            }
+        }
     }
 }
